@@ -1,0 +1,308 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    @{
+        ViewBag.Title = "Home Page";
+    }
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+    <style type="text/css">
+        .box {
+            background-color: transparent;
+            color: black;
+            font-weight: bold;
+            margin: 10px auto;
+            height: 450px;
+            width: 600px;
+            float:left;
+        }
+        /*Add multi-level navigation support*/
+        .dropdown-submenu {
+            position: relative;
+        }
+
+            .dropdown-submenu > .dropdown-menu {
+                top: -2%;
+                left: 99.5%;
+                -webkit-border-radius: 0 6px 6px 6px;
+                -moz-border-radius: 0 6px 6px 6px;
+                border-radius: 0 6px 6px 6px;
+                margin: 0;
+                padding: 0;
+            }
+
+            .dropdown-submenu:active > .dropdown-menu, .dropdown-submenu:hover > .dropdown-menu {
+                display: block;
+            }
+
+            .dropdown-submenu > a:after {
+                display: block;
+                content: " ";
+                float: right;
+                width: 0;
+                height: 0;
+                border-color: transparent;
+                border-style: solid;
+                border-width: 5px 0 5px 5px;
+                border-left-color: #cccccc;
+                margin-top: 5px;
+                margin-right: -10px;
+            }
+
+            .dropdown-submenu:active > a:after {
+                border-left-color: #ffffff;
+            }
+
+            .dropdown-submenu.pull-left {
+                float: none;
+            }
+
+                .dropdown-submenu.pull-left > .dropdown-menu {
+                    left: -100%;
+                    margin-left: 10px;
+                    -webkit-border-radius: 6px 0 6px 6px;
+                    -moz-border-radius: 6px 0 6px 6px;
+                    border-radius: 6px 0 6px 6px;
+                }
+
+        .navbar-nav > li:hover > ul.dropdown-menu,
+        .navbar-nav > li:hover > ul.dropdown-menu > li.dropdown-submenu:hover > ul.dropdown-menu {
+            display: block;
+            background-color: #FFA050;
+        }
+
+        .navbar-nav > li:hover ul li a:hover,
+        #topNavigation .navbar-nav > li.active ul li a:hover {
+            background-color: #451F00;
+            color: #FFA050;
+        }
+
+        #topNavigation .navbar-nav > li.active ul li a {
+            background-color: #FFA050;
+            color: #451F00;
+        }
+    </style>
+</head>
+<body>
+    <div class="" style="margin-left:2%;margin-top:2%">
+        
+        @*<img src="~/Scripts/Images/home_pg.jpg" />*@
+        <table>
+            <tr>
+                <td>
+                    <div class="container">
+                        <div class="navbar-header">
+                            
+                            <ul style="list-style:none">
+                                
+                                <li>
+                                    @*<div class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav" style="margin-top:-3%;margin-left:7%">
+                            <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                            <li>@Html.ActionLink("About", "About", "Home")</li>
+                            <li>@Html.ActionLink("RESTAURANTS", "RESTAURANTS", "Home")</li>
+                            <li>@Html.ActionLink("BANQUET", "BANQUET", "Home")</li>
+                            <li>@Html.ActionLink("FACILITIES", "FACILITIES", "Home")</li>
+                            <li>@Html.ActionLink("SPORTS", "SPORTS", "Home")</li>
+                            <li>@Html.ActionLink("MEMBERS", "MEMBERS", "Home")</li>
+                            <li>@Html.ActionLink("EVENTS", "EVENTS", "Home")</li>
+                            <li>@Html.ActionLink("AFFILIATES", "AFFILIATES", "Home")</li>
+                            <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                            @*<li>@Html.ActionLink("Movies", "Index", "Movies")</li>*@
+                                    @*</ul>
+                            @Html.Partial("_LoginPartial")
+                        </div>*@
+                                    <div class="collapse navbar-collapse" id="navbar-collapse" style="margin-left:8%;margin-top:-7%">
+                                        <ul class="nav navbar-nav level2">
+                                            <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                                            @*<li><a href='@Html.ActionLink("Home", "Index", "Home")'>Home</a></li>*@
+                                            <li>
+                                                @Html.ActionLink("About", "About", "Home")
+                                            <ul class="dropdown-menu level3">
+                                                <li class="">
+                                                    <a class="hidden-xs" href="/destinations/europe-the-caucasus/">Management the Caucasus </a>
+                                                    <a class="visible-xs dropdown-toggle" href="#" data-toggle="dropdown">Europe &amp; the Caucasus  <b class="caret"></b></a>
+                                                </li>
+                                                <li class="">
+                                                    <a class="hidden-xs" href="/destinations/north-africa/">Past Office Bearers Details</a>
+                                                    <a class="visible-xs dropdown-toggle" href="#" data-toggle="dropdownTwo">North Africa <b class="caret"></b></a>
+                                                </li>
+                                                <li class="">
+                                                    <a class="hidden-xs" href="/destinations/north-africa/">Club Staff</a>
+                                                    <a class="visible-xs dropdown-toggle" href="#" data-toggle="dropdownTwo">Club Staff<b class="caret"></b></a>
+                                                </li>
+                                                <li class="">
+                                                    <a class="hidden-xs" href="/destinations/north-africa/">Latest News</a>
+                                                    <a class="visible-xs dropdown-toggle" href="#" data-toggle="dropdownTwo">Latest News <b class="caret"></b></a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            @Html.ActionLink("RESTAURANTS", "RESTAURANTS", "Home")
+                                            <ul class="dropdown-menu level3">
+                                                <li class="">
+                                                    <a class="hidden-xs" href="/destinations/europe-the-caucasus/">Kapila</a>
+                                                    <a class="visible-xs dropdown-toggle" href="#" data-toggle="dropdown">Europe &amp; the Caucasus  <b class="caret"></b></a>
+                                                </li>
+                                                <li class="">
+                                                    <a class="hidden-xs" href="/destinations/north-africa/">Kaveri</a>
+                                                    <a class="visible-xs dropdown-toggle" href="#" data-toggle="dropdownTwo">North Africa <b class="caret"></b></a>
+                                                </li>
+                                                <li class="">
+                                                    <a class="hidden-xs" href="/destinations/north-africa/">Bellivana</a>
+                                                    <a class="visible-xs dropdown-toggle" href="#" data-toggle="dropdownTwo">Club Staff<b class="caret"></b></a>
+                                                </li>
+                                                <li class="">
+                                                    <a class="hidden-xs" href="/destinations/north-africa/">Temple of Bacchus</a>
+                                                    <a class="visible-xs dropdown-toggle" href="#" data-toggle="dropdownTwo">Latest News <b class="caret"></b></a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            @Html.ActionLink("BANQUET", "BANQUET", "Home")
+                                            <ul class="dropdown-menu level3">
+                                                <li class="">
+                                                    <a class="hidden-xs" href="/destinations/europe-the-caucasus/">New Convention Hall</a>
+                                                    <a class="visible-xs dropdown-toggle" href="#" data-toggle="dropdown">Europe &amp; the Caucasus  <b class="caret"></b></a>
+                                                </li>
+
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            @Html.ActionLink("FACILITIES", "FACILITIES", "Home")
+                                            <ul class="dropdown-menu level3">
+                                                <li class="">
+                                                    <a class="hidden-xs" href="/destinations/europe-the-caucasus/">Cards</a>
+                                                    <a class="visible-xs dropdown-toggle" href="#" data-toggle="dropdown">Europe &amp; the Caucasus  <b class="caret"></b></a>
+                                                </li>
+                                                <li class="">
+                                                    <a class="hidden-xs" href="/destinations/north-africa/">Library</a>
+                                                    <a class="visible-xs dropdown-toggle" href="#" data-toggle="dropdownTwo">North Africa <b class="caret"></b></a>
+                                                </li>
+                                                <li class="">
+                                                    <a class="hidden-xs" href="/destinations/north-africa/">Accomodation</a>
+                                                    <a class="visible-xs dropdown-toggle" href="#" data-toggle="dropdownTwo">Club Staff<b class="caret"></b></a>
+                                                </li>
+                                                <li class="">
+                                                    <a class="hidden-xs" href="/destinations/north-africa/">Steam &amp; Sauna</a>
+                                                    <a class="visible-xs dropdown-toggle" href="#" data-toggle="dropdownTwo">Latest News <b class="caret"></b></a>
+                                                </li>
+                                                <li class="">
+                                                    <a class="hidden-xs" href="/destinations/north-africa/">Ladies Salon</a>
+                                                    <a class="visible-xs dropdown-toggle" href="#" data-toggle="dropdownTwo">Latest News <b class="caret"></b></a>
+                                                </li>
+                                                <li class="">
+                                                    <a class="hidden-xs" href="/destinations/north-africa/">Men's Salon</a>
+                                                    <a class="visible-xs dropdown-toggle" href="#" data-toggle="dropdownTwo">Latest News <b class="caret"></b></a>
+                                                </li>
+                                                <li class="">
+                                                    <a class="hidden-xs" href="/destinations/north-africa/">Children's Park</a>
+                                                    <a class="visible-xs dropdown-toggle" href="#" data-toggle="dropdownTwo">Latest News <b class="caret"></b></a>
+                                                </li>
+
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            @Html.ActionLink("SPORTS", "SPORTS", "Home")
+                                            <ul class="dropdown-menu level3">
+                                                <li class="">
+                                                    <a class="hidden-xs" href="/destinations/europe-the-caucasus/">Gym</a>
+                                                    <a class="visible-xs dropdown-toggle" href="#" data-toggle="dropdown">Europe &amp; the Caucasus  <b class="caret"></b></a>
+                                                </li>
+                                                <li class="">
+                                                    <a class="hidden-xs" href="/destinations/north-africa/">Tennis</a>
+                                                    <a class="visible-xs dropdown-toggle" href="#" data-toggle="dropdownTwo">North Africa <b class="caret"></b></a>
+                                                </li>
+                                                <li class="">
+                                                    <a class="hidden-xs" href="/destinations/north-africa/">Table Tennis</a>
+                                                    <a class="visible-xs dropdown-toggle" href="#" data-toggle="dropdownTwo">Club Staff<b class="caret"></b></a>
+                                                </li>
+                                                <li class="">
+                                                    <a class="hidden-xs" href="/destinations/north-africa/">Swimming Pool</a>
+                                                    <a class="visible-xs dropdown-toggle" href="#" data-toggle="dropdownTwo">Latest News <b class="caret"></b></a>
+                                                </li>
+                                                <li class="">
+                                                    <a class="hidden-xs" href="/destinations/north-africa/">Badminton</a>
+                                                    <a class="visible-xs dropdown-toggle" href="#" data-toggle="dropdownTwo">Latest News <b class="caret"></b></a>
+                                                </li>
+                                                <li class="">
+                                                    <a class="hidden-xs" href="/destinations/north-africa/">Billiards</a>
+                                                    <a class="visible-xs dropdown-toggle" href="#" data-toggle="dropdownTwo">Latest News <b class="caret"></b></a>
+                                                </li>
+                                            </ul>
+                                        </li>
+
+                                        <li>
+                                            @Html.ActionLink("MEMBERS", "MEMBERS", "Home")
+
+                                        </li>
+
+                                        <li>
+                                            @Html.ActionLink("EVENTS", "EVENTS", "Home")
+
+                                        </li>
+                                        <li>
+                                            @Html.ActionLink("AFFILIATES", "AFFILIATES", "Home")
+
+                                        </li>
+                                        <li>
+                                            @Html.ActionLink("Contact", "Contact", "Home")
+
+                                        </li>
+                                        <li style="float:right">
+                                            @Html.Partial("_LoginPartial")
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+
+                        </ul>
+                    </div>
+
+                </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="~/Scripts/Images/home_pg_mainpic.jpg" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="box">
+                        <p style="font-size:20px;color:skyblue">Welcome to India's best Residential Club...</p>
+                        <p style=" font-style: normal; font-size: 14px; ">The Indiranagar Club was established in 1980 in the present location in HAL 2nd Stage, Indiranagar. 
+                        It is considered as</br> one of the best residential area Clubs in the Country. Today with a glorious history scaling for about 30 years, the club has</br>
+                         grown steadily with a total membership of more than 3500 inclusive of 75 reputed corporate giants. </p>
+                        <p style=" font-style: normal; font-size: 14px; ">Set in sylvan surroundings in the upscale residential area of Indiranagar, in the eastern half of Bangalore City, known for</br>its equable climate, it moved to its present location in HAL 2nd Stage, Indiranagar, during the August 1985 and situated at</br>a distance of approximately 6 Kms. East of Vidhana Soudha, the seat of the Karnataka Government, and is easily</br> accessible from the Airport and Railway Station. The Club occupies an evergreen area of slightly over a hectare.
+                        </p>
+                        <p style=" font-style: normal; font-size: 14px; ">
+                            The Club explodes with the most incredible outdoor and indoor possibilities and culminates in a place that is as temperate</br> as its verdant surroundings. The declared objective of the club includes the promotion of fellowship, Sports of all kinds </br> Literary and Cultural Activities, Physical, Moral and Intellectual development and lastly social / cultural welfare of the </br> members and their families.
+                        </p>
+                    </div>
+                    <div style="margin-top:3%">
+                        <img src="~/Scripts/Images/bar_pic.jpg" />
+                        <img src="~/Scripts/Images/pool_pic.jpg" style="margin-left:7%"/>
+                    </div>
+                </td>
+                <td>
+                  
+                </td>
+
+
+            </tr>
+            <tr>
+                <td>
+                    <img src="~/Scripts/Images/bottom_blue_patch.jpg" />
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="row">
+
+    </div>
+</body>
+</html>
