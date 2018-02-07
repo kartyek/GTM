@@ -606,6 +606,7 @@
       "minLength": 1,
       "defaultValue": "[parameters('extension').sxaMsDeployPackageUrl]"
     }
+	}
   },
   "resources": [
     {
@@ -639,9 +640,9 @@
       }
     }
   ]
-		}
-	  }
-	},
+		},
+	 
+	
 	
     {
       "apiVersion": "[variables('resourcesApiVersion')]",
